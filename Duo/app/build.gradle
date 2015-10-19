@@ -14,16 +14,15 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-        test.java.srcDirs += 'src/androidTest/kotlin'
-    }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/androidTest/kotlin'
     }
     packagingOptions {
         exclude 'LICENSE.txt'
@@ -35,7 +34,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.android.support:support-annotations:23.0.1'
     compile 'org.jetbrains.kotlin:kotlin-stdlib:0.12.+'
-    androidTestCompile 'junit:junit:4.12'
+    compile 'junit:junit:4.12'
 
     androidTestCompile 'com.android.support:support-annotations:23.0.1'
     androidTestCompile 'com.android.support.test:runner:0.3'
