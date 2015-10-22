@@ -12,7 +12,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
     buildTypes {
         release {
@@ -24,9 +24,6 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
         test.java.srcDirs += 'src/androidTest/kotlin'
     }
-    packagingOptions {
-        exclude 'LICENSE.txt'
-    }
 }
 
 dependencies {
@@ -34,14 +31,8 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.0.0'
     compile 'com.android.support:support-annotations:23.0.1'
     compile 'org.jetbrains.kotlin:kotlin-stdlib:0.12.+'
-    compile 'junit:junit:4.12'
-
-    androidTestCompile 'com.android.support:support-annotations:23.0.1'
-    androidTestCompile 'com.android.support.test:runner:0.3'
-    // Set this dependency to use JUnit 4 rules
-    androidTestCompile 'com.android.support.test:rules:0.3'
-    // Set this dependency to build and run Espresso tests
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
+    testCompile 'junit:junit:4.12'
+    testCompile "org.mockito:mockito-core:1.9.5"
 }
 
 buildscript {
